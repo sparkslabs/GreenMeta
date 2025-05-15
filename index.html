@@ -34,7 +34,7 @@
         </style>
     </head>
 
-    <body>
+    <body style="background: #9c9">
         <dialog id="loading">
             <h1>Initialising</h1>
         </dialog>
@@ -51,17 +51,22 @@
                     <div>
                         <h1>Green Meta File Generator</h1>
                     </div>
-                    <div>
-                        Meta Item 1: <input id="meta-1" type="text" /><br>
-                        Meta Item 2: <input id="meta-2" type="text" /><br>
-                        Meta Item 3: <input id="meta-3" type="text" />
+                    <div class="roundedblock">
+                        energy-consumption (kWh): <input id="meta-1" type="text" /> <br>
+                        carbon-footprint (gCO2e): <input id="meta-2" type="text" /> <br>
+                        water-consumption (liters): <input id="meta-3" type="text" /> <br>
+                        power-usage-efficiency (PUE - float): <input id="meta-4" type="text" /> <br>
+                        PUE estimation method (optional, text): <input id="meta-5" type="text" /> <br>
+                        water-usage-effectiveness (WUE - L/kWh): <input id="meta-6" type="text" /> <br>
+                        WUE estimation method: <input id="meta-7" type="text" /> <br>
+                        Electricity Carbon Intensity (ECI): <input id="meta-8" type="text" /> <br>
+                        ECI source (text): <input id="meta-9" type="text" /> <br>
                         <button id="new-task-btn" type="submit" py-click="add_meta">
-                            Add task
+                            Generate!
                         </button>
                     </div>
 
-                    <div id="list-tasks-container"></div>
-                    <div id="meta-container"><pre>GREEN META GOES HERE</pre></div>
+                    <div class="roundedblock" id="meta-container"><pre>GREEN META GOES HERE</pre></div>
 
                     <template id="task-template">
                         <section class="task py-li-element">
@@ -76,10 +81,5 @@
 
             <script type="py" src="./main.py" config="./pyscript.toml"></script>
         </section>
-<!--<p>
-<hr>        
-<P>        <a href="/">
-                    <img src="./assets/logo.png" class="logo" />
-                </a> -->
     </body>
 </html>

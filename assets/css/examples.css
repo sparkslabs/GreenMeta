@@ -6,6 +6,17 @@ body {
     margin: 0.5rem;
 }
 
+.roundedblock {
+    float: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    padding: 1em;
+    Width: 40%;
+    background: #fff;
+    border-radius: 1em
+}
+
 html {
     font-family:
         ui-sans-serif,
