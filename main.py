@@ -70,7 +70,3 @@ def add_meta(e):
 
     meta_html = meta_template % values
     meta_container.html = meta_html
-
-
-
-

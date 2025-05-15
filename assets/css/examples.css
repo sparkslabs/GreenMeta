@@ -14,7 +14,8 @@ body {
     padding: 1em;
     Width: 40%;
     background: #fff;
-    border-radius: 1em
+    border-radius: 1em;
+    min-height: 5em;
 }
 
 html {
