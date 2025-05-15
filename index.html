@@ -32,6 +32,22 @@
                 text-decoration: line-through;
             }
         </style>
+    <script>
+        function content(divSelector, value) {
+            document.querySelector(divSelector).innerHTML = value;
+        }
+
+        function copyDivToClipboard() {
+            var range = document.createRange();
+            range.selectNode(document.getElementById("greenmetayml"));
+            window.getSelection().removeAllRanges(); // clear current selection
+            window.getSelection().addRange(range); // to select text
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();// to deselect
+
+            content('#message',"Copied!");
+        }
+    </script>
     </head>
 
     <body style="background: #9c9">

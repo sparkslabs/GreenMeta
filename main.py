@@ -9,8 +9,8 @@ def q(selector, root=document):
     return root.querySelector(selector)
 
 meta_template = """\
-<h1> Meta Data Template </h1>
-<pre>
+<h1 id="message" onclick="copyDivToClipboard()"> Copy to Clipboard </h1>
+<div id="greenmetayml">
 travel: TBD # TBD
 experimental-work: TBD # TBD
 computing:
@@ -36,7 +36,7 @@ computing:
                 electricity-carbon-intensity:
                     value: %(eci_value)s gCO2/kWh # Float
                     source: %(eci_source)s # text
-</pre>
+</div>
 """
 
 meta_container = pydom["#meta-container"][0]

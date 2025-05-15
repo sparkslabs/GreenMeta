@@ -17,6 +17,12 @@ body {
     border-radius: 1em;
     min-height: 5em;
 }
+#greenmetayml {
+  font-family: "Courier New", monospace;
+  white-space: pre;
+  font-size: 0.8em;
+  overflow: scroll;
+}
 
 html {
     font-family:
