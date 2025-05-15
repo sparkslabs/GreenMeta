@@ -1,0 +1,25 @@
+travel: TBD # TBD
+experimental-work: TBD # TBD
+computing:
+    embodied: # TBD
+        carbon-footprint: TBD # TBD
+        abiotic-resource-depletion:  TBD # TBD
+    operational:
+        impact-values:
+            energy-consumption: %(energy-consumption)s # kWh - float
+            carbon-footprint: %(carbon-footprint)s     # gCO2e - float
+            water-consumption:  %(water-consumption)s  # liters - float
+        methods-and-scope:
+            software-boundaries:  TBD # TBD
+            hardware-boundaries: 
+                components-used:  # TBD
+                infrastructure:
+                    power-usage-efficiency:
+                        PUE: %(pue)s # float
+                        estimation-method: %(pue-estimation-method)s # text
+                    water-usage-effectiveness:
+                        value: %(water-usage-effectiveness)s # L/kWh
+                        estimation-method: %(wue-estimation-method)s # text
+                electricity-carbon-intensity:
+                    value: %(eci-value)s gCO2/kWh # Float
+                    source: %(eci-estimation-method)s # text
