@@ -1,0 +1,88 @@
+<html>
+<head>
+<style>
+.roundedblock {
+    float: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    padding: 1em;
+    Width: 40%;
+    background: #fff;
+    border-radius: 1em;
+    min-height: 5em;
+}
+#greenmetayml {
+  font-family: "Courier New", monospace;
+  white-space: pre;
+  font-size: 0.8em;
+  overflow: scroll;
+}
+</style>
+<script>
+    function content(divSelector, value) {
+        document.querySelector(divSelector).innerHTML = value;
+    }
+
+    function copyDivToClipboard() {
+        var range = document.createRange();
+        range.selectNode(document.getElementById("greenmetayml"));
+        window.getSelection().removeAllRanges(); // clear current selection
+        window.getSelection().addRange(range); // to select text
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();// to deselect
+
+        content('#message',"Copied!");
+    }
+</script>
+<head>
+<body style="background: #9c9">
+
+<div class="roundedblock">
+                        energy-consumption (kWh): <input id="meta-1" type="text" /> <br>
+                        carbon-footprint (gCO2e): <input id="meta-2" type="text" /> <br>
+                        water-consumption (liters): <input id="meta-3" type="text" /> <br>
+                        power-usage-efficiency (PUE - float): <input id="meta-4" type="text" /> <br>
+                        PUE estimation method (optional, text): <input id="meta-5" type="text" /> <br>
+                        water-usage-effectiveness (WUE - L/kWh): <input id="meta-6" type="text" /> <br>
+                        WUE estimation method: <input id="meta-7" type="text" /> <br>
+                        Electricity Carbon Intensity (ECI): <input id="meta-8" type="text" /> <br>
+                        ECI source (text): <input id="meta-9" type="text" /> <br>
+                        <button id="new-task-btn" type="submit" py-click="add_meta">
+                            Generate!
+                        </button>
+</div>
+<div class="roundedblock">
+<h1 id="message" onclick="copyDivToClipboard()"> Copy to Clipboard </h1>
+
+<div id="greenmetayml">
+travel: TBD # TBD
+experimental-work: TBD # TBD
+computing:
+    embodied: # TBD
+        carbon-footprint: TBD # TBD
+        abiotic-resource-depletion:  TBD # TBD
+    operational:
+        impact-values:
+            energy-consumption: %(energy_consumption)s # kWh - float
+            carbon-footprint: %(carbon_footprint)s     # gCO2e - float
+            water-consumption:  %(water_consumption)s  # liters - float
+        methods-and-scope:
+            software-boundaries:  TBD # TBD
+            hardware-boundaries: 
+                components-used:  # TBD
+                infrastructure:
+                    power-usage-efficiency:
+                        PUE: %(pue)s # float
+                        estimation-method: %(pue_estimation_method)s # text
+                    water-usage-effectiveness:
+                        value: %(water_usage_effectiveness)s # L/kWh
+                        estimation-method: %(wue_estimation_method)s # text
+                electricity-carbon-intensity:
+                    value: %(eci_value)s gCO2/kWh # Float
+                    source: %(eci_source)s # text
+</div>
+</div>
+
+</body>
+</html>
